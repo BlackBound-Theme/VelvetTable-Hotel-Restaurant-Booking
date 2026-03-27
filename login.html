@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | VelvetTable</title>
+    <link rel="stylesheet" href="frontend/css/style.css?v=12.0">
+</head>
+<body style="background:var(--navy); min-height:100vh;">
+
+<div class="auth-panel">
+    <!-- Left: Visual Panel -->
+    <div class="auth-panel-img" style="background:linear-gradient(135deg, #0a0e1a 0%, #1a1208 50%, #0a1020 100%); position:relative; overflow:hidden; display:flex; align-items:flex-end;">
+        <div class="stars-bg"></div>
+        <!-- Chandelier illustration overlay -->
+        <div style="position:absolute; inset:0; background:radial-gradient(ellipse at 50% 20%, rgba(201,168,76,0.12) 0%, transparent 60%); z-index:1;"></div>
+        <div style="position:absolute; inset:0; z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:3rem;">
+            <div style="text-align:center;">
+                <img src="frontend/assets/logo.png" alt="VelvetTable" style="width:72px; height:72px; object-fit:contain; border-radius:50%; margin:0 auto 1.5rem; display:block;" >
+                <h2 style="font-family:var(--font-serif); font-size:2.5rem; color:var(--ivory); margin-bottom:0.75rem; font-style:italic;">Welcome Back</h2>
+                <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.7; max-width:280px; margin:0 auto;">Sign in to manage your table reservations, explore your booking history, and access exclusive member perks.</p>
+                <div class="gold-divider" style="margin:2rem auto;"></div>
+                <div style="display:flex; flex-direction:column; gap:0.75rem; text-align:left; max-width:240px; margin:0 auto;">
+                                        <div style="display:flex; align-items:center; gap:0.75rem; color:var(--text-muted); font-size:0.82rem;">
+                        <div style="width:20px; height:20px; border-radius:50%; background:rgba(201,168,76,0.15); border:1px solid rgba(201,168,76,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        Live 2D Table Selection                    </div>
+                                        <div style="display:flex; align-items:center; gap:0.75rem; color:var(--text-muted); font-size:0.82rem;">
+                        <div style="width:20px; height:20px; border-radius:50%; background:rgba(201,168,76,0.15); border:1px solid rgba(201,168,76,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        Instant Booking Confirmation                    </div>
+                                        <div style="display:flex; align-items:center; gap:0.75rem; color:var(--text-muted); font-size:0.82rem;">
+                        <div style="width:20px; height:20px; border-radius:50%; background:rgba(201,168,76,0.15); border:1px solid rgba(201,168,76,0.3); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        Personal Booking History                    </div>
+                                    </div>
+            </div>
+        </div>
+        <!-- Bottom quote -->
+        <div style="position:relative; z-index:3; padding:2rem; width:100%; border-top:1px solid rgba(201,168,76,0.1);">
+            <p style="font-family:var(--font-serif); font-style:italic; color:var(--text-muted); font-size:0.85rem; line-height:1.6;">"Luxury is in each detail."</p>
+            <p style="font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(201,168,76,0.5); margin-top:0.25rem;">- Hubert de Givenchy</p>
+        </div>
+    </div>
+
+    <!-- Right: Form Panel -->
+    <div class="auth-form-side">
+        <div style="width:100%; max-width:420px;">
+            <a href="index.html" style="display:flex; align-items:center; gap:0.6rem; margin-bottom:3rem; text-decoration:none;">
+                <img src="frontend/assets/logo.png" alt="VelvetTable" style="width:36px; height:36px; object-fit:contain;" >
+                <span style="font-family:var(--font-serif); font-size:1rem; color:var(--ivory); letter-spacing:0.06em;">VelvetTable</span>
+            </a>
+
+            <div style="margin-bottom:2.5rem;">
+                <h1 style="font-family:var(--font-serif); font-size:2rem; color:var(--ivory); margin-bottom:0.4rem;">Sign In</h1>
+                <p style="color:var(--text-muted); font-size:0.88rem;">New here? <a href="signup.html" style="color:var(--gold); font-weight:600; transition:opacity 0.3s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">Create an account</a></p>
+            </div>
+
+            
+            
+            <form method="POST" action="login.html" style="display:flex; flex-direction:column; gap:1.25rem;">
+                <input type="hidden" name="csrf_token" value="41872f63dafc2b654ee01b7b9b2ca9cc0c356cd20bf3a8555dc3d0139babe2d2">
+
+                <div>
+                    <label class="label-luxury">Email Address</label>
+                    <input type="email" name="email" required class="input-luxury" placeholder="you@example.com">
+                </div>
+                <div>
+                    <label class="label-luxury">Password</label>
+                    <input type="password" name="password" required class="input-luxury" placeholder="**********">
+                </div>
+
+                <button type="submit" class="btn-gold" style="width:100%; justify-content:center; padding:1rem; font-size:0.85rem; margin-top:0.25rem;">
+                    Sign In to VelvetTable
+                </button>
+            </form>
+
+            <div style="margin-top:2rem; padding:1.25rem; background:rgba(201,168,76,0.04); border:1px solid rgba(201,168,76,0.1); border-radius:12px;">
+                <p style="font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:0.6rem; font-weight:700;">Demo Credentials</p>
+                <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.25rem;"><strong style="color:var(--ivory);">Admin:</strong> admin@blackbound.com / password</p>
+                <p style="font-size:0.78rem; color:var(--text-muted);"><strong style="color:var(--ivory);">Guest:</strong> customer@example.com / password</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
